@@ -2,13 +2,9 @@
 <html lang="zh-CN">
 <head>
   <title>Salesperson Attractiveness Beyond Looks: Mixed method of Multimodal Machine Learning and Explainable AI</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- UIkit -->
   <link rel="stylesheet" href="css/uikit.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <script src="js/uikit.min.js"></script>
@@ -16,7 +12,6 @@
   <script src="js/uikit-icons.min.js"></script>
   <script src="js/script.js"></script>
 
-  <!-- Academic layout (Scheme C) -->
   <style>
     :root{
       --page-max: 1080px;
@@ -30,6 +25,7 @@
     body{
       color: var(--text);
       line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     .page-wrap{
       max-width: var(--page-max);
@@ -37,10 +33,10 @@
       padding: 0 8px;
     }
 
-    /* Banner (tightened spacing) */
+    /* Banner */
     .banner{
       background: var(--bg);
-      padding: 26px 0 46px;       /* ↓ reduce vertical space */
+      padding: 26px 0 46px;
       border-bottom: 1px solid var(--line);
     }
     .banner-title{
@@ -54,30 +50,29 @@
     .banner-subtitle{
       font-size: 24px;
       text-align: center;
-      margin: 10px 0 0;           /* ↓ tighter */
+      margin: 10px 0 0;
       font-weight: 500;
     }
     .banner-meta{
       font-size: 20px;
       color: var(--muted);
       text-align: center;
-      margin-top: 8px;            /* ↓ tighter */
+      margin-top: 8px;
     }
 
-    /* Intro block (tightened spacing) */
+    /* Intro block */
     .intro{
-      padding: 3#v1.section{
-  padding-top: 20px;
-}4px 0 0;          /* ↓ reduce gap below banner */
+      padding: 10px 0 0; 
     }
     .intro p{
-      margin: 0 0 6px;            /* ↓ reduce gap to TOC */
+      /* 这里增加了 20px 的上边距 */
+      margin: 20px 0 6px; 
       font-size: 17px;
     }
     
-    /* TOC (you moved it into Intro; keep it here) */
+    /* TOC */
     .toc{
-      margin-top: 10px;           /* ↓ tighter */
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -98,10 +93,9 @@
       text-decoration: none;
     }
 
-
     /* Section */
     .section{
-      padding: 10px 0;
+      padding: 40px 0;
       border-bottom: 1px solid var(--line);
     }
     .section:last-child{
@@ -133,13 +127,6 @@
       color: var(--text);
       font-weight: 600;
     }
-    <style>
-
-  #stimuli{
-    margin-top: 30px;
-  }
-</style>
-
 
     /* Video grid */
     .video-grid{
@@ -169,7 +156,7 @@
     .ratio-9x16{
       position: relative;
       width: 100%;
-      padding-top: 177.7778%; /* 16/9 * 100 */
+      padding-top: 177.7778%; 
       background: #000;
     }
     .ratio-9x16 iframe{
@@ -190,30 +177,22 @@
 
     /* Responsive */
     @media (max-width: 640px){
-      .banner-title{ font-size: 28px; }
-      .banner-subtitle{ font-size: 24px; }
-
-      .section{ padding: 34px 0; }
-      .section-title{ font-size: 19px; }
-
-      .video-grid{
-        grid-template-columns: 1fr;
-      }
+      .banner-title{ font-size: 24px; }
+      .banner-subtitle{ font-size: 20px; }
+      .video-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body oncontextmenu="self.event.returnValue=false">
 
-  <!-- Top navbar (removed uk-margin to avoid extra blank space) -->
   <nav class="uk-navbar-container" uk-navbar uk-sticky>
     <div class="uk-navbar-left">
-      <a href="#offcanvas-slide" uk-icon="icon: menu" uk-toggle></a>
+      <a class="uk-navbar-toggle" href="#offcanvas-slide" uk-navbar-toggle-icon uk-toggle></a>
       <div id="offcanvas-slide" uk-offcanvas="mode: push">
         <div class="uk-offcanvas-bar">
           <ul class="uk-nav uk-nav-default">
-            <li class="uk-nav-header"><a href="#stimuli" uk-scroll><b>Video Stimuli</b></a></li>
-            <li class="uk-nav-divider"></li>
+            <li class="uk-nav-header">Video Stimuli</li>
             <li><a href="#v1" uk-scroll>Video 1</a></li>
             <li><a href="#v2" uk-scroll>Video 2</a></li>
             <li><a href="#v3" uk-scroll>Video 3</a></li>
@@ -226,7 +205,6 @@
     </div>
   </nav>
 
-  <!-- Banner -->
   <header class="banner">
     <div class="page-wrap">
       <h1 class="banner-title">Salesperson Attractiveness Beyond Looks:</h1>
@@ -236,14 +214,11 @@
   </header>
 
   <main class="page-wrap">
-    <!-- Intro (TOC is here as you moved it) -->
     <section id="stimuli" class="intro">
-     
       <p>
         The 6 video stimuli in Web Appendix J (Causal Identification of Salesperson Attractiveness) are shown as follows:
       </p>
 
-      <!-- TOC (always visible, wraps on mobile) -->
       <nav class="toc" aria-label="Contents">
         <a href="#v1" uk-scroll>Video 1</a>
         <a href="#v2" uk-scroll>Video 2</a>
@@ -254,218 +229,153 @@
       </nav>
     </section>
 
-    <!-- Video 1 -->
     <section id="v1" class="section">
       <h2 class="section-title">Video 1</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> low</span>
         <span class="badge"><b>Product Type:</b> search product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/XMpWOLvcYgA?si=oHQX0YrB9hNCchxN"
-              title="Video 1 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/XMpWOLvcYgA" title="Video 1 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/rzcLCpoVfyE?si=tU_YoQP47PdnVbOY"
-              title="Video 1 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/rzcLCpoVfyE" title="Video 1 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Video 2 -->
     <section id="v2" class="section">
       <h2 class="section-title">Video 2</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> middle</span>
         <span class="badge"><b>Product Type:</b> search product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/wADQC214Sqw?si=RsSNFWhfEsx4EmB4"
-              title="Video 2 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wADQC214Sqw" title="Video 2 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/1erqs4WUtQI?si=B2HGzGMqWA7aNGvR"
-              title="Video 2 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/1erqs4WUtQI" title="Video 2 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Video 3 -->
     <section id="v3" class="section">
       <h2 class="section-title">Video 3</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> high</span>
         <span class="badge"><b>Product Type:</b> search product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/RrY3bOAXZ3M?si=ZQ1Wba34R7mhDHJB"
-              title="Video 3 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/RrY3bOAXZ3M" title="Video 3 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/Azv7EVcywHM?si=dRSqf_TTFXq5CApi"
-              title="Video 3 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Azv7EVcywHM" title="Video 3 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Video 4 -->
     <section id="v4" class="section">
       <h2 class="section-title">Video 4</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> low</span>
         <span class="badge"><b>Product Type:</b> experience product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/xgluu3B3J1o?si=MZ53b2kfyzEV-iPa"
-              title="Video 4 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/xgluu3B3J1o" title="Video 4 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/sfWr1VFAFus?si=5qyNA_XW4Y_Wh6yq"
-              title="Video 4 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/sfWr1VFAFus" title="Video 4 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Video 5 -->
     <section id="v5" class="section">
       <h2 class="section-title">Video 5</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> middle</span>
         <span class="badge"><b>Product Type:</b> experience product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/AsEPOU3_s4Y?si=Mvn7Xn9G0fZpWhud"
-              title="Video 5 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/AsEPOU3_s4Y" title="Video 5 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/tpt8ozx84Us?si=szzXyp3d35lukF2u"
-              title="Video 5 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tpt8ozx84Us" title="Video 5 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Video 6 -->
     <section id="v6" class="section">
       <h2 class="section-title">Video 6</h2>
       <div class="meta-row">
         <span class="badge"><b>Salesperson Attractiveness:</b> high</span>
         <span class="badge"><b>Product Type:</b> experience product</span>
       </div>
-
       <div class="video-grid">
         <div class="video-card">
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/0G0OVvhYeCQ?si=hA5oFgX5pYm59Tbv"
-              title="Video 6 (English)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/0G0OVvhYeCQ" title="Video 6 (EN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
-
         <div class="video-card">
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
-            <iframe src="https://www.youtube.com/embed/CKYqWANLelw?si=aAo8HoVGUirg4FnT"
-              title="Video 6 (Chinese)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/CKYqWANLelw" title="Video 6 (CN)" allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
       </div>
     </section>
 
-    <!-- Back to top -->
-    <a href="#" uk-totop class="totop" uk-scroll style="position:fixed;right:18px;bottom:18px;"></a>
   </main>
+
+  <a href="#" uk-totop class="totop" uk-scroll style="position:fixed;right:18px;bottom:18px;"></a>
+
 </body>
 </html>
