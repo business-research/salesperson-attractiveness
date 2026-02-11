@@ -37,10 +37,10 @@
       padding: 0 18px;
     }
 
-    /* Banner */
+    /* Banner (tightened spacing) */
     .banner{
       background: var(--bg);
-      padding: 34px 0 28px;
+      padding: 26px 0 16px;       /* ↓ reduce vertical space */
       border-bottom: 1px solid var(--line);
     }
     .banner-title{
@@ -55,19 +55,19 @@
       font-size: 18px;
       color: var(--muted);
       text-align: center;
-      margin: 12px 0 0;
+      margin: 10px 0 0;           /* ↓ tighter */
       font-weight: 500;
     }
     .banner-meta{
       font-size: 14px;
       color: var(--muted);
       text-align: center;
-      margin-top: 10px;
+      margin-top: 8px;            /* ↓ tighter */
     }
 
-    /* TOC */
+    /* TOC (you moved it into Intro; keep it here) */
     .toc{
-      margin-top: 18px;
+      margin-top: 10px;           /* ↓ tighter */
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -88,6 +88,15 @@
       text-decoration: none;
     }
 
+    /* Intro block (tightened spacing) */
+    .intro{
+      padding: 14px 0 0;          /* ↓ reduce gap below banner */
+    }
+    .intro p{
+      margin: 0 0 6px;            /* ↓ reduce gap to TOC */
+      font-size: 17px;
+    }
+
     /* Section */
     .section{
       padding: 44px 0;
@@ -100,10 +109,6 @@
       font-size: 20px;
       font-weight: 700;
       margin: 0 0 10px;
-    }
-    .section-desc{
-      margin: 0 0 18px;
-      font-size: 17px;
     }
 
     /* Meta badges */
@@ -150,7 +155,7 @@
       font-weight: 600;
     }
 
-    /* Responsive iframe (default 9:16 for shorts-style) */
+    /* Responsive iframe (9:16) */
     .ratio-9x16{
       position: relative;
       width: 100%;
@@ -173,15 +178,6 @@
       border-top: 1px solid var(--line);
     }
 
-    /* Intro block */
-    .intro{
-      padding: 28px 0 6px;
-    }
-    .intro p{
-      margin: 0;
-      font-size: 17px;
-    }
-
     /* Responsive */
     @media (max-width: 640px){
       .banner-title{ font-size: 24px; }
@@ -189,7 +185,6 @@
 
       .section{ padding: 34px 0; }
       .section-title{ font-size: 19px; }
-      .section-desc{ font-size: 16px; }
 
       .video-grid{
         grid-template-columns: 1fr;
@@ -200,8 +195,8 @@
 
 <body oncontextmenu="self.event.returnValue=false">
 
-  <!-- Top navbar (keep your UIkit offcanvas) -->
-  <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
+  <!-- Top navbar (removed uk-margin to avoid extra blank space) -->
+  <nav class="uk-navbar-container" uk-navbar uk-sticky>
     <div class="uk-navbar-left">
       <a href="#offcanvas-slide" uk-icon="icon: menu" uk-toggle></a>
       <div id="offcanvas-slide" uk-offcanvas="mode: push">
@@ -227,18 +222,17 @@
       <h1 class="banner-title">Salesperson Attractiveness Beyond Looks:</h1>
       <div class="banner-subtitle">Mixed method of Multimodal Machine Learning and Explainable AI</div>
       <div class="banner-meta">Web Appendix J • Video Stimuli</div>
-
-   
     </div>
   </header>
 
   <main class="page-wrap">
-    <!-- Intro -->
+    <!-- Intro (TOC is here as you moved it) -->
     <section id="stimuli" class="intro">
       <p>
         The 6 video stimuli in Web Appendix J (Causal Identification of Salesperson Attractiveness) are shown as follows:
       </p>
-         <!-- TOC (always visible, wraps on mobile) -->
+
+      <!-- TOC (always visible, wraps on mobile) -->
       <nav class="toc" aria-label="Contents">
         <a href="#v1" uk-scroll>Video 1</a>
         <a href="#v2" uk-scroll>Video 2</a>
@@ -262,8 +256,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/XMpWOLvcYgA?si=oHQX0YrB9hNCchxN"
-              title="Video 1 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 1 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -272,8 +268,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/rzcLCpoVfyE?si=tU_YoQP47PdnVbOY"
-              title="Video 1 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 1 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
@@ -293,8 +291,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/wADQC214Sqw?si=RsSNFWhfEsx4EmB4"
-              title="Video 2 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 2 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -303,8 +303,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/1erqs4WUtQI?si=B2HGzGMqWA7aNGvR"
-              title="Video 2 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 2 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
@@ -324,8 +326,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/RrY3bOAXZ3M?si=ZQ1Wba34R7mhDHJB"
-              title="Video 3 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 3 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -334,8 +338,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/Azv7EVcywHM?si=dRSqf_TTFXq5CApi"
-              title="Video 3 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 3 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
@@ -355,8 +361,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/xgluu3B3J1o?si=MZ53b2kfyzEV-iPa"
-              title="Video 4 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 4 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -365,8 +373,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/sfWr1VFAFus?si=5qyNA_XW4Y_Wh6yq"
-              title="Video 4 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 4 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
@@ -386,8 +396,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/AsEPOU3_s4Y?si=Mvn7Xn9G0fZpWhud"
-              title="Video 5 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 5 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -396,8 +408,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/tpt8ozx84Us?si=szzXyp3d35lukF2u"
-              title="Video 5 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 5 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
@@ -417,8 +431,10 @@
           <div class="video-card-head"><b>English version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/0G0OVvhYeCQ?si=hA5oFgX5pYm59Tbv"
-              title="Video 6 (English)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 6 (English)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(English version)</div>
         </div>
@@ -427,8 +443,10 @@
           <div class="video-card-head"><b>Chinese version</b></div>
           <div class="ratio-9x16">
             <iframe src="https://www.youtube.com/embed/CKYqWANLelw?si=aAo8HoVGUirg4FnT"
-              title="Video 6 (Chinese)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              title="Video 6 (Chinese)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
           </div>
           <div class="caption">(Chinese version)</div>
         </div>
